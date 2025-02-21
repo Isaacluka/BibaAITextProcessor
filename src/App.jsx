@@ -7,39 +7,54 @@ import { faArrowUp, faAnglesDown, faRobot } from '@fortawesome/free-solid-svg-ic
 import ChatForm from './ChatForm'
 import ChatMessage from './ChatMessage'
 
-function App() {
-  // const [count, setCount] = useState(0)
 
-  // return (
-  //   <>
-  //     <div>
-  //       <a href="https://vite.dev" target="_blank">
-  //         <img src={viteLogo} className="logo" alt="Vite logo" />
-  //       </a>
-  //       <a href="https://react.dev" target="_blank">
-  //         <img src={reactLogo} className="logo react" alt="React logo" />
-  //       </a>
-  //     </div>
-  //     <h1>Vite + React</h1>
-  //     <div className="card">
-  //       <button onClick={() => setCount((count) => count + 1)}>
-  //         count is {count}
-  //       </button>
-  //       <p>
-  //         Edit <code>src/App.jsx</code> and save to test HMR
-  //       </p>
-  //     </div>
-  //     <p className="read-the-docs">
-  //       Click on the Vite and React logos to learn more
-  //     </p>
-  //   </>
-  // )
+// const languageDetectorCapabilities = await self.ai.languageDetector.capabilities();
+// const canDetect = languageDetectorCapabilities.capabilities;
+// let detector;
+// if (canDetect === 'no') {
+//   // The language detector isn't usable.
+//   console.log("HI THERE!");
+// }
+// if (canDetect === 'readily') {
+//   // The language detector can immediately be used.
+//   detector = await self.ai.languageDetector.create();
+// } else {
+//   // The language detector can be used after model download.
+//   detector = await self.ai.languageDetector.create({
+//     monitor(m) {
+//       m.addEventListener('downloadprogress', (e) => {
+//         console.log(`Downloaded ${e.loaded} of ${e.total} bytes.`);
+//       });
+//     },
+//   });
+//   await detector.ready;
+// }
+
+
+// const someUserText = 'Hallo und herzlich willkommen!';
+// const results = await detector.detect(someUserText);
+// for (const result of results) {
+//   // Show the full list of potential languages with their likelihood, ranked
+//   // from most likely to least likely. In practice, one would pick the top
+//   // language(s) that cross a high enough threshold.
+//   console.log(result.detectedLanguage, result.confidence);
+// }
+// // (Output truncated):
+// // de 0.9993835687637329
+// // en 0.00038279531872831285
+// // nl 0.00010798392031574622
+// // ...
+
+
+
+function App() {
+  
   const [chatHistory, setChatHistory] = useState([]);
 
   // const messageEndRef = useRef(null);
   return (
     <>
-      <h1>Biba AI Chatbot</h1>
+      <h2 className='heroText'>Biba AI Chatbot</h2>
 
       <div className='chatInterface'>
         <div className="chatHeader">
@@ -57,6 +72,7 @@ function App() {
           {chatHistory.map((chat, index) =>(
             <ChatMessage key={index} chat={chat}/>
           ))}
+          {/* <p>${results}</p> */}
          </div>
          <div className="chatInputDiv">
           <ChatForm setChatHistory={setChatHistory}/>

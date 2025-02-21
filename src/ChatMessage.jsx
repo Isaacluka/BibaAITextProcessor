@@ -3,8 +3,10 @@ const ChatMessage = ({chat}) => {
         <div className={`message ${chat.role ==="model" ? 'bot' : 'user'}-message`}>
             
             <p className="message-text">{chat.text}</p>
+            <span className="span"></span>
 
         </div>
+        
     )
 }
 
