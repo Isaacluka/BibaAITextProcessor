@@ -8,6 +8,7 @@ import ChatForm from './ChatForm'
 import ChatMessage from './ChatMessage'
 
 
+
 // const languageDetectorCapabilities = await self.ai.languageDetector.capabilities();
 // const canDetect = languageDetectorCapabilities.capabilities;
 // let detector;
